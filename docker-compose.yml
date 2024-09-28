@@ -1,0 +1,25 @@
+services:
+  a:
+    build:
+      context: .
+    networks:
+      - servers
+  b:
+    build:
+      context: .
+    networks:
+      - servers
+  c:
+    build:
+      context: .
+    networks:
+      - servers
+volumes:
+  data_a:
+  data_b:
+  data_c:
+networks:
+  servers:
+    driver: bridge
+    driver_opts:
+      com.docker.network.bridge.host_binding_ipv4: 0.0.0.0
